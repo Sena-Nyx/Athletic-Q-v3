@@ -1,0 +1,37 @@
+body, html {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Cambiar el color del texto de los elementos desplegables a blanco */
+.nav-link, .collapse-item {
+    color: white !important;
+}
+
+#collapseProductos .collapse-inner,
+#collapseSubProductos .collapse-inner {
+    color: white;
+}
+
+#collapseProductos .collapse-item {
+    color: white;
+}
+
+.nav-link:hover, .collapse-item:hover {
+    background-color: #333 !important; /* Cambia #333 al color que prefieras */
+    color: white !important; /* Mantener el texto blanco */
+}
+
+.sidebar .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.sidebar .nav-link::after {
+    margin-left: 0.8rem; 
+}
+
+
+
+
