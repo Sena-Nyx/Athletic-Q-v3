@@ -1,0 +1,44 @@
+body{
+    background-image: url(/img/fondo2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ancho{
+    max-width: 900px;
+}
+.color{
+    color: rgb(255, 0, 0);
+}
+.col1{
+    color: #027b00;
+}
+.color1{
+    background-color: #470b0b;
+    border: 1px solid rgb(255, 255, 255);
+    width: 200px;
+}
+
+.card1{
+    border: 2px solid  rgb(255, 255, 255);
+    backdrop-filter: blur(40px);
+}
+
+
+.borde{
+    border-radius: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fffefe;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #6c6c6c;}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/crear_usuario.css">
+    <script src="/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="">
+    <div class="container d-flex  align-items-center min-vh-100 ancho ">
+      <div class="container card1 p-4 ">
+        <div class="row">
+          <div class="col-md-4 d-flex align-items-center">
+            <img src="/img/logo2.png" alt="" width="280px">
+          </div>
+          <div class="col-md-8"  > 
+            <h2> Crear usuario</h2>
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-6">
+                  <label for="validationCustom01" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="validationCustom01"  required>
+                  <div class="valid-feedback col1">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom02" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="validationCustom02" required>
+                  <div class="valid-feedback col1">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustomUsername03" class="form-label">Edad</label>
+                  <input type="date" class="form-control" id="validationCustomUsername03" aria-describedby="inputGroupPrepend" required>
+                  <div class="invalid-feedback color">
+                    Please choose a username.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">Tipo</label>
+                  <select class="form-select" id="validationCustom04" required>
+                    <option selected disabled value="">seleccione...</option>
+                    <option>TI</option>
+                    <option>CC</option>
+                    <option>...</option>
+                  </select>
+                  <div class="invalid-feedback color">
+                    Please select a valid state.
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <label for="validationCustom05" class="form-label">Numero de Identidad</label>
+                  <input type="number" class="form-control" id="validationCustom05" required>
+                  <div class="invalid-feedback color">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationCustom06" class="form-label">EPS</label>
+                  <select class="form-select" id="validationCustom06" required>
+                    <option selected disabled value="">Eps...</option>
+                    <option>...</option>
+                    <option>...</option>
+                    <option>...</option>
+                    <option>...</option>
+                    <option>...</option>
+                  </select>
+                  <div class="invalid-feedback color">
+                    Please select a valid state.
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <label for="validationCustom07" class="form-label">E-mil</label>
+                  <input type="email" class="form-control" id="validationCustom07" required>
+                  <div class="invalid-feedback color">
+                    Please provide a valid @
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="validationCustom07" class="form-label">Numero de Celular</label>
+                  <input type="number" class="form-control" id="validationCustom07" required>
+                  <div class="invalid-feedback color">
+                    Please provide a valid.
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <label for="validationCustom07" class="form-label">Numero de Emergencia</label>
+                  <input type="number" class="form-control" id="validationCustom07" required>
+                  <div class="invalid-feedback color">
+                    Please provide a valid.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom07" class="form-label">Direccion</label>
+                  <input type="text" class="form-control" id="validationCustom07" required>
+                  <div class="invalid-feedback color">
+                    Please provide a valid.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input color " type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label " for="invalidCheck">
+                      Accepto terminos 
+                    </label>
+                    <div class="invalid-feedback color">
+                      You must agree before submitting.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary color1" type="submit">Crear</button>
+                </div>
+              </form>
+          </div>
+      </div>
+      </div>
+    </div>
+    <script src="/js/advertencia.js"></script>
+</body>
+</html>

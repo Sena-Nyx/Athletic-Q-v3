@@ -17,10 +17,11 @@ body, html {
 }
 
 .nav-link:hover, .collapse-item:hover {
-    background-color: #333 !important; /* Cambia #333 al color que prefieras */
-    color: white !important; /* Mantener el texto blanco */
+    background-color: #333 !important;
+    color: white !important; 
 }
 
+/* Flechitas de barra lateral */
 .sidebar .nav-item .nav-link {
     display: flex;
     align-items: center;
@@ -32,6 +33,182 @@ body, html {
     margin-left: 0.8rem; 
 }
 
+/* colores custom */
+.rojo {
+    background-color: #821212;
+}
+
+.negro {
+    background-color: #000000;
+}
+
+.blanco {
+    color: #ffffff;
+}
+
+.tabla-red {
+    background-color: #821212 !important;
+    color: white !important; 
+}
+.btn-red-main {
+    font-family: 'Poppins', sans-serif;
+    background-color: #821212;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-red-main:hover {
+    background-color: #a71d2a;
+    color: white;
+}
+
+/* Botones del carrusel */
+.carousel-control-prev-icon::after {
+    content: '<';
+    color: black; 
+    font-size: 4rem;
+    display: inline-block;
+}
+
+.carousel-control-next-icon::after {
+    content: '>';
+    color: black;
+    font-size: 4rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.carousel-control-prev {
+    left: -50px;
+}
+
+.carousel-control-next {
+    right: -50px;
+}
+
+/* redondeo inferior en cards */
+
+.card {
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+}
+
+  /* Hover para botón "Cancelar" */
+.btn.negro:hover {
+    background-color: #333 !important; 
+    color: #fff !important;
+}
+
+  /* Hover para botón "Cerrar Sesión" */
+.btn.rojo:hover {
+    background-color: #c82333 !important;
+    color: #fff !important;
+}
+
+/*  Hover Perfil y cerrar sesion */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #000000; 
+    color: white;
+}
+
+.redondo {
+border-top-left-radius: 50px;   /* Redondea la esquina superior izquierda */
+border-bottom-left-radius: 50px;/* Redondea la esquina inferior izquierda */
+border-top-right-radius: 50px;
+border-bottom-right-radius: 50px;
+}
+
+/* estilos cards */
+.taman { 
+    width: 870px; 
+    overflow: hidden; 
+}
+
+.lili { 
+    width: 10px; 
+    height: 7px;  
+}
+
+.orvud { 
+    font-family: "Bebas Neue", sans-serif; 
+    border: none; 
+}
+
+.qwxd { 
+    border: none; 
+}
+
+.yuyo {
+    background-color: rgb(139, 0, 0);  
+    border: none;  
+}
+
+.no-padding {
+    padding: 0;
+    margin: 0;
+}
+
+.xd {
+    border: none; 
+}
+
+.lagarto { 
+    padding: 0; 
+}
+
+.parrafo {
+    font-family: "Bebas Neue", sans-serif;  
+}
+
+.parrafo2 {
+    font-family: "Bebas Neue", sans-serif; 
+    font-size: 20px; 
+    text-decoration: underline;
+}
+
+.pretcio { 
+    margin-bottom: -9px;
+}
+
+.tatcio {
+    margin-bottom: 30px;
+}
+
+.rakel {
+    margin-top: 5px;
+}
+
+.modal-bt-cool {
+    background-color: rgb(139, 0, 0);
+    border-top-left-radius: 0px;  
+    border-top-right-radius: 0px; 
+    border-bottom-right-radius: 0px; 
+    border-bottom-left-radius: 0px;  
+    height: 47px;  
+    padding-top: -20px;
+    font-family: "Bebas Neue", sans-serif; 
+    color: white; 
+    font-size: 26px; 
+    text-decoration: solid;  
+    border: none;
+}
+
+.ty {
+    background-color: rgb(91, 12, 12);
+}
 
 
+.modal.show .modal-dialog {
+    display: flex !important;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+  
 

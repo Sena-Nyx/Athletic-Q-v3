@@ -1,0 +1,2299 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Productos</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/sb-admin-2/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/sb-admin-2/css/sb-admin-2.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Link JS -->
+    <script src="/sb-admin-2/vendor/jquery/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/sb-admin-2/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/sb-admin-2/js/sb-admin-2.min.js"></script>
+    <script src="/sb-admin-2/vendor/chart.js/Chart.min.js"></script>
+    <script src="/sb-admin-2/js/demo/chart-area-demo.js"></script>
+    <script src="/sb-admin-2/js/demo/chart-pie-demo.js"></script>
+    <script src="/sb-admin-2/vendor/chart.js/Chart.min.js"></script>
+    
+  </head>
+  <body id="page-top">
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-black sidebar sidebar-dark accordion" id="accordionSidebar" style="min-width: 250px;">
+        <!-- Logo-seccion -->
+        <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center" style="margin-top: 135px;" href="membresias.html">
+          <div class="sidebar-brand-icon">
+            <img src="/img/logo.png" alt="Logo" class="img-fluid" style="width: 190px;">
+          </div>
+        </a>
+
+        <!-- hr -->
+        <hr class="sidebar-divider my-5">
+
+        <!-- Nav Item - Control de ventas -->
+        <li class="nav-item active">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVentas" aria-expanded="true" aria-controls="collapseVentas">
+            <i class="fas fa-chart-line"></i>
+            <span>Control de Ventas</span>
+          </a>
+          <div id="collapseVentas" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="py-2 collapse-inner rounded">
+              <a class="collapse-item" href="/ventas.html">Ventas</a>
+              <div class="collapse-divider"></div>
+            </div>
+          </div>
+        </li>
+        <hr class="sidebar-divider my-3">
+
+        <!-- Nav Item - Control de membresias -->
+        <li class="nav-item active">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMembresias" aria-expanded="true" aria-controls="collapseMembresias">
+            <i class="fas fa-id-card-alt"></i>
+            <span>Control de Membresias</span>
+          </a>
+          <div id="collapseMembresias" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="py-2 collapse-inner rounded">
+              <a class="collapse-item" href="/membresias.html">Membresias</a>
+              <div class="collapse-divider"></div>
+            </div>
+          </div>
+        </li>
+        <hr class="sidebar-divider my-3">
+
+        <!-- Nav Item - Control de usuarios -->
+        <li class="nav-item active">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuarios" aria-expanded="true" aria-controls="collapseUsuarios">
+            <i class="fas fa-users"></i>
+            <span>Control de usuarios</span>
+          </a>
+          <div id="collapseUsuarios" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="py-2 collapse-inner rounded">
+              <a class="collapse-item" href="/usuarios.html">Usuarios</a>
+              <a class="collapse-item" href="/movimientos.html">Movimientos</a>
+              <div class="collapse-divider"></div>
+            </div>
+          </div>
+        </li>
+        <hr class="sidebar-divider my-3">
+
+        <!-- Nav Item - Control de Productos -->
+        <li class="nav-item active">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProductos" aria-expanded="true" aria-controls="collapseVentas">
+            <i class="fas fa-chart-line"></i>
+            <span>Control de Productos</span>
+          </a>
+          <div id="collapseProductos" class="collapse" aria-labelledby="headingVentas" data-parent="#accordionSidebar">
+            <div class="py-2 collapse-inner rounded">
+
+              <!-- Submenu dentro de Control de Productos -->
+              <a class="collapse-item collapsed" href="#" data-toggle="collapse" data-target="#collapseSubProductos" aria-expanded="false" aria-controls="collapseSubProductos">
+                <span>Inventario</span>
+              </a>
+              <div id="collapseSubProductos" class="collapse" aria-labelledby="headingSubProductos" data-parent="#collapseProductos">
+                <div class="py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="productos1.html">Suplementos</a>
+                  <a class="collapse-item" href="productos2.html">Proteinas</a>
+                  <a class="collapse-item" href="productos3.html">Aminoacidos</a>
+                  <a class="collapse-item" href="productos4.html">Batidos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <hr class="sidebar-divider">
+        
+      </ul>
+
+      <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Div principal -->
+        <div id="content">
+
+          <!-- Navbar principal -->
+          <nav class="navbar navbar-expand navbar-light bg-black topbar mb-4 static-top shadow">
+
+            <!-- Menu desplegable vistas moviles -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars" style="color: white;"></i>
+            </button>
+
+            <!-- Barra de busqueda -->
+            <form class="d-none d-sm-inline-block form-inline my-2 my-md-0 w-50 navbar-search" style="margin-left: 250px;">
+              <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn" type="button">
+                    <i class="fas fa-search fa-sm" style="color: white;"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Principal Usuario -->
+            <ul class="navbar-nav ml-auto">
+
+              <!-- Nav Item - Barra de busqueda (solo vistas moviles) -->
+              <li class="nav-item dropdown no-arrow d-sm-none">
+                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-search fa-fw"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                  <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                      <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-black" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
+
+              <!-- Nav Item - Informacion de usuario -->
+              <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="img-profile rounded-circle" src="/img/user.png" style="width: 50px; height: 45px;">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in" aria-labelledby="userDropdown">
+                  <a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target="#userInfoFloating" aria-expanded="false" aria-controls="userInfoFloating">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-black-400"></i>
+                    Perfil
+                  </a>
+                </div>
+              </li>
+              
+            </ul>
+          </nav>
+
+          <!-- Ventana flotando perfil -->
+          <div class="collapse position-fixed top-0 end-0 p-3" id="userInfoFloating" style="z-index: 1055; width: 300px;">
+            <div class="card shadow-lg border-0">
+              <div class="card-header rojo text-white d-flex justify-content-between align-items-center">
+                <span>Perfil del Usuario</span>
+                <button type="button" class="btn-close btn-close-white" data-bs-toggle="collapse" data-bs-target="#userInfoFloating" aria-label="Close"></button>
+              </div>
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <img src="/img/user.png" class="rounded-circle" style="width: 80px; height: 80px;" alt="Usuario">
+                </div>
+
+                <strong>Cedula:</strong>
+                <span id="userCedula" class="text-muted">[Cedula del usuario]</span>
+                <br>
+
+                <strong>Nombre:</strong>
+                <span id="userNombre" class="text-muted">[Nombre del usuario]</span>
+                <br>
+
+                  <strong>Rol:</strong>
+                <span id="userRol" class="text-muted">[Administrador]</span>
+
+                <a href="#" class="btn rojo text-white w-100 mt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-black-400"></i>
+                  Cerrar sesion
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal de confirmacion de cerrar sesion -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header rojo text-white">
+                      <h5 class="modal-title" id="exampleModalLabel">Listo para cerrar sesion?</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="text-white">&times;</span> <!-- correcto -->
+                      </button>
+                  </div>
+                  <div class="modal-body">Estas seguro que deseas cerrar sesion</div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn negro text-white" data-bs-dismiss="modal">Cancelar</button>
+                      <a class="btn rojo text-white" href="login.html">Cerrar Sesion</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <!-- Titulo -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+              <h2 class="h3 mb-0 text-black font-weight-bold">Membresias</h2>
+            </div>
+
+            <div class="row">
+              <!-- Boton de crear usuarios -->
+              <div class="col-xl-2 col-md-6 mb-5">
+                <button class="btn-red-main btn w-100 h-100" data-toggle="modal" data-target="#crearUsuarioModal">
+                  <i class="fas fa-user-plus mr-2"></i>Crear Usuario
+                </button>
+              </div>
+
+              <!-- Modal Crear Usuario -->
+              <div class="modal fade" id="crearUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="crearUsuarioModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                  <form>
+                    <div class="modal-content">
+                      <div class="rojo modal-header text-white">
+                        <h5 class="modal-title" id="crearUsuarioModalLabel">Crear Nuevo Usuario</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Cerrar">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Nombres</label>
+                            <input type="text" class="form-control" placeholder="Ingrese nombres">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Apellidos</label>
+                            <input type="text" class="form-control" placeholder="Ingrese apellidos">
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Cedula</label>
+                            <input type="text" class="form-control" placeholder="Numero de cedula">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Genero</label>
+                            <select class="form-control">
+                              <option selected disabled>Seleccione</option>
+                              <option>Masculino</option>
+                              <option>Femenino</option>
+                              <option>Otro</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>EPS</label>
+                            <input type="text" class="form-control" placeholder="EPS">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>RH</label>
+                            <input type="text" class="form-control" placeholder="Tipo de sangre">
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Telefono</label>
+                            <input type="text" class="form-control" placeholder="Numero de telefono">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Direccion</label>
+                            <input type="text" class="form-control" placeholder="Direccion de residencia">
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="form-group col-md-12">
+                            <label>Dias de mensualidad</label>
+                            <input type="number" class="form-control" value="30" readonly>
+                          </div>                          
+                        </div>
+
+                        <div class="form-group">
+                          <label>Foto del Usuario</label>
+                          <input type="file" class="form-control-file">
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="rojo btn text-white">Crear</button>
+                        <button type="button" class="negro btn text-white" data-dismiss="modal">Cancelar</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Card con cantidad de usuarios -->
+              <div class="col-xl-2 col-md-6 mb-5">
+                <div class="btn-red-main btn w-100 h-100 text-left p-3 shadow d-flex justify-content-between align-items-center" style="font-family: 'Poppins', sans-serif;">
+                  <div>
+                    <div class="text-xs text-white mb-1">Usuarios Registrados</div>
+                    <div class="h5 mb-0 font-weight-bold text-white">30</div>
+                  </div>
+                  <div class="ml-2">
+                    <i class="fas fa-users fa-2x text-white"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container">
+              
+                <!-- Carrusel -->
+                <div id="cardCarousel" class="carousel slide" data-bs-ride="false">
+                  <div class="carousel-inner">
+              
+
+                    <!-- Seccion 1 del carrusel -->
+                    <div class="carousel-item active">
+                      <div class="d-flex flex-column gap-4">
+
+                        <!-- Fila 1 -->
+                        <div class="d-flex justify-content-between flex-wrap gap-4">
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 1</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas1" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas1" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 2</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas2" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas2" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 3</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas3" aria-controls="offcanvasRight">Detalles</button>
+                              
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas3" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 4</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas4" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas4" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 5</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas5" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas5" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <!-- Fila 2 -->
+                        <div class="d-flex justify-content-between flex-wrap">
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 6</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas6" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas6" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 7</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas7" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas7" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 8</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas8" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas8" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 9</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas9" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas9" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 10</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas10" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas10" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                    <!-- Seccion 2 del carrusel -->
+                    <div class="carousel-item">
+                      <div class="d-flex flex-column gap-4">
+
+                        <!-- Fila 1 -->
+                        <div class="d-flex justify-content-between flex-wrap gap-4">
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 11</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas11" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas11" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 12</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas12" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas12" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 13</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas13" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas13" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 14</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas14" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas14" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 15</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas15" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas15" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <!-- Fila 2 -->
+                        <div class="d-flex justify-content-between flex-wrap">
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 16</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas16" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas16" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 17</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas17" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas17" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 18</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas18" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas18" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 19</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas19" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas19" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 20</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas20" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas20" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Seccion 3 del carrusel -->
+                    <div class="carousel-item">
+                      <div class="d-flex flex-column gap-4">
+
+                        <!-- Fila 1 -->
+                        <div class="d-flex justify-content-between flex-wrap gap-4">
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 21</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas21" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas21" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 22</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas22" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas22" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 23</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas23" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas23" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 24</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas24" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas24" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 25</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas25" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas25" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <!-- Fila 2 -->
+                        <div class="d-flex justify-content-between flex-wrap">
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 26</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas26" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas26" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 27</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas27" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas27" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 28</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas28" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas28" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 29</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas29" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas29" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userCedula" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias restantes:</strong>
+                                    <span id="userMembresia" class="text-muted">[dias restante de mensualidad]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Dias inscrito:</strong>
+                                    <span id="userMembresia" class="text-muted">[Dias totales siendo miembro]</span>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card negro text-center text-white" style="flex: 1 0 18%; max-width: 18%;">
+                            <img src="/img/usercard.jpg" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column align-items-center">
+                              <h5 class="card-title">Miembro 30</h5>
+                              <p class="card-text">C.C 1123456789</p>
+
+                              <!-- Boton offcanva -->
+                              <button class=" rojo text-white mt-2 btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas30" aria-controls="offcanvasRight">Detalles</button>
+
+                              <!-- Offcanva -->
+                              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas30" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header rojo text-white">
+                                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Detalles del Miembro ...</h5>
+                                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                              
+                                  <!-- Imagen del Miembro -->
+                                  <div class="row mb-3"> 
+                                    <img src="/img/usercard.jpg" alt="" width="100%" height="auto">
+                                  </div>
+                              
+                                  <!-- Informacion del Miembro -->
+                                  <div class="row mb-2"> 
+                                    <strong>Cedula:</strong>
+                                    <span id="userNombre" class="text-muted">[Cedula del Miembro]</span>
+                                  </div>
+
+                                  <div class="row mb-2"> 
+                                    <strong>Nombre:</strong>
+                                    <span id="userNombre" class="text-muted">[Nombre del Miembro]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Correo:</strong>
+                                    <span id="userCorreo" class="text-muted">[Correo electronico]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Telefono:</strong>
+                                    <span id="userTelefono" class="text-muted">[Nimero de telefono]</span>
+                                  </div>
+                              
+                                  <div class="row mb-2"> 
+                                    <strong>Direccion:</strong>
+                                    <span id="userMembresia" class="text-muted">[Direccion del Miembro]</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- hr -->
+                    <hr class="sidebar-divider my-5">
+
+                  </div>
+                  
+                  <!-- Botones del carrusel (siguiente/anterior) -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                  </button>
+
+                  <!-- Footer -->
+                  <footer class="footer sticky-footer blanco">
+                    <div class="container my-auto"></div>
+                  </footer>
+                
+                </div>
+              </div>
+              
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </body>
+</html>

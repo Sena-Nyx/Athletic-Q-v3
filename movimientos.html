@@ -24,14 +24,14 @@
     <script src="/sb-admin-2/js/demo/chart-area-demo.js"></script>
     <script src="/sb-admin-2/js/demo/chart-pie-demo.js"></script>
     <script src="/sb-admin-2/vendor/chart.js/Chart.min.js"></script>
-    
+
   </head>
   <body id="page-top">
     <div id="wrapper">
       <!-- Sidebar -->
       <ul class="navbar-nav bg-black sidebar sidebar-dark accordion" id="accordionSidebar" style="min-width: 250px;">
         <!-- Logo-seccion -->
-        <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center" style="margin-top: 135px;" href="index.html">
+        <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center" style="margin-top: 135px;" href="movimientos.html">
           <div class="sidebar-brand-icon">
             <img src="/img/logo.png" alt="Logo" class="img-fluid" style="width: 190px;">
           </div>
@@ -79,7 +79,7 @@
           <div id="collapseUsuarios" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="py-2 collapse-inner rounded">
               <a class="collapse-item" href="/usuarios.html">Usuarios</a>
-              <a class="collapse-item" href="login.html">Movimientos</a>
+              <a class="collapse-item" href="/movimientos.html">Movimientos</a>
               <div class="collapse-divider"></div>
             </div>
           </div>
@@ -201,7 +201,7 @@
 
                 <a href="#" class="btn rojo text-white w-100 mt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-black-400"></i>
-                  Cerrar sesión
+                  Cerrar sesion
                 </a>
               </div>
             </div>
@@ -229,19 +229,55 @@
 
           <div class="container-fluid">
 
-            <!-- Mensaje de bienvenida -->
-            <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
-              <div class="card shadow-lg border-0 p-5" style="max-width: 800px; width: 100%; font-size: 1.25rem;">
-                <div class="d-flex align-items-center">
-                  <img src="/img/user.png" alt="Avatar del usuario" class="rounded-circle me-4" style="width: 100px; height: 100px;">
-                  <div>
-                    <h2 class="mb-2" style="font-size: 2.25rem;">¡Bienvenido de nuevo!</h2>
-                    <p class="mb-0 text-muted">Nos alegra verte, <span id="userNombreTitulo">[Nombre del usuario]</span> 🖐️</p>
-                  </div>
+            <!-- Titulo -->
+            <h1 class="h3 mb-2 text-black fw-bold">Historial de movimientos</h1>
+            <p class="mb-4 text-black">Registros de actividad de los usuarios en el sistema</p>
+
+            <!-- Tabla de movimientos -->
+            <div class="card shadow mb-4">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered text-center" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th class="tabla-red">ID Movimiento</th>
+                        <th class="tabla-red">ID Usuario</th>
+                        <th class="tabla-red">Nombre</th>
+                        <th class="tabla-red">Tipo de Movimiento</th>
+                        <th class="tabla-red">Descripcion</th>
+                        <th class="tabla-red">Fecha</th>
+                        <th class="tabla-red">Hora</th>
+                        <th class="tabla-red">Rol</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>MV001</td>
+                        <td>USR123</td>
+                        <td>Juan Perez</td>
+                        <td>Ingreso</td>
+                        <td>Accedio al sistema desde la web</td>
+                        <td>2025-04-24</td>
+                        <td>08:34</td>
+                        <td>Empleado</td>
+                      </tr>
+                      <tr>
+                        <td>MV002</td>
+                        <td>USR124</td>
+                        <td>Maria Lopez</td>
+                        <td>Modificacion</td>
+                        <td>Edito datos de un producto</td>
+                        <td>2025-04-24</td>
+                        <td>09:15</td>
+                        <td>Empleado</td>
+                      </tr>
+                      <!-- Mas registros aqui -->
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-            
+
             
             <div class="container">
 
